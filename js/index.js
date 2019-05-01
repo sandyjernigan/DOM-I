@@ -63,6 +63,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
   // CTA Image
   const ctaHeaderIMG = document.getElementById('cta-img');
+  ctaHeaderIMG.src = siteContent["cta"]["img-src"];
 
 // Main Content
 
