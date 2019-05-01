@@ -42,10 +42,21 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Task 1: Create selectors to point your data into elements
-let headerNavList = document.querySelectorAll('header nav a');
+// Task 2: Update the HTML with the JSON data
 
+// Add Content for Header Nav Bar
+const headerNavList = document.querySelectorAll('header nav a');
 let i = 1;
 headerNavList.forEach( navItem => {
   navItem.textContent = siteContent["nav"]["nav-item-" + i];
   i++;
 });
+
+// CTA header
+const ctaHeader = document.querySelector('.cta-text h1');
+const ctaHeaderbutton = document.querySelector('.cta-text button');
+const ctaHeaderIMG = document.getElementById('cta-img');
+
+// Main Content
+
+
