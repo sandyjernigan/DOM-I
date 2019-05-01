@@ -46,14 +46,16 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Add Content for Header Nav Bar
 const headerNavList = document.querySelectorAll('header nav a');
-let i = 1;
-headerNavList.forEach( navItem => {
-  navItem.textContent = siteContent["nav"]["nav-item-" + i];
-  i++;
-});
+  let i = 1;
+  headerNavList.forEach( navItem => {
+    navItem.textContent = siteContent["nav"]["nav-item-" + i];
+    i++;
+  });
 
-// CTA header
+// CTA H1
 const ctaHeader = document.querySelector('.cta-text h1');
+  ctaHeader.textContent = siteContent["cta"]["h1"];
+
 const ctaHeaderbutton = document.querySelector('.cta-text button');
 const ctaHeaderIMG = document.getElementById('cta-img');
 
