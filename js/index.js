@@ -40,3 +40,12 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Task 1: Create selectors to point your data into elements
+let headerNavList = document.querySelectorAll('header nav a');
+
+let i = 1;
+headerNavList.forEach( navItem => {
+  navItem.textContent = siteContent["nav"]["nav-item-" + i];
+  i++;
+});
