@@ -111,6 +111,14 @@ footerText.textContent = siteContent["footer"]["copyright"];
 
   headerNavList.forEach( navItem => {
     navItem.style.color = 'green';
-  });
+  }); // This can be added into the forEach earlier, leaving here for easier reading.
 
-  
+  // Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system.
+
+  const newNavItem1 = document.createElement("a");  
+  newNavItem1.textContent = "Login";
+  document.querySelector('header nav').appendChild(newNavItem1);
+
+  const newNavItem2 = document.createElement("a");  
+  newNavItem2.textContent = "DOM";
+  document.querySelector('header nav').prepend(newNavItem2);
