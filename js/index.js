@@ -66,5 +66,15 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   ctaHeaderIMG.src = siteContent["cta"]["img-src"];
 
 // Main Content
+  // Content headers
+  const contentHeaders = document.querySelectorAll('.main-content h4');
 
+  const contentHeadersText = Object.keys(siteContent["main-content"]).filter(text => text.includes("h4"));
+  let h = 0;
+  contentHeaders.forEach( header => {
+    let headerText = contentHeadersText[h];
+    header.textContent = siteContent["main-content"][headerText];
+    h++;
+  });
 
+  //contentHeaders[0].textContent = siteContent["cta"]["features-h4"];
