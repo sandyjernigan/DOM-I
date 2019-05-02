@@ -101,7 +101,6 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   contactText[1].textContent = siteContent["contact"]["phone"];
   contactText[2].textContent = siteContent["contact"]["email"];
 
-
-  // JSON Content below
-  // "footer": {
-  //   "copyright" : "Copyright Great Idea! 2018"
+// Footer
+const footerText = document.querySelector('footer p');
+footerText.textContent = siteContent["footer"]["copyright"];
