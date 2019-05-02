@@ -129,6 +129,15 @@ footerText.textContent = siteContent["footer"]["copyright"];
 
 //Stretch Goals
   // Update styles throughout the page as you see fit.  Study what happens when you updated the DOM using style in JavaScript.  
+  const allh4tags = document.querySelectorAll('h4');
+  allh4tags.forEach( h => {
+    h.style.color = 'darkblue';
+  }); 
+  const allptags = document.querySelectorAll('p');
+  allptags.forEach( p => {
+    p.style.color = 'darkblue';
+  }); 
+
   // Study tomorrow's lesson on events and try to integrate a button that can update content on the site with a click of a button.  You could build a similar data object with new values to help you test the click event.
 
   // Click Login and it will change to Sign Out
