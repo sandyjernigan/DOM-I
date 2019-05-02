@@ -73,9 +73,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   
   i = 0;
   contentHeaders.forEach( header => {
-    let headerText = contentHeadersText[i];
-    header.textContent = siteContent["main-content"][headerText];
-    i++;
+    header.textContent = siteContent["main-content"][contentHeadersText[i++]];
   });
   
   // Text Content
@@ -85,11 +83,25 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   
   i = 0;
   contentp.forEach( text => {
-    let pText = contentpText[i];
-    text.textContent = siteContent["main-content"][pText];
-    i++;
+    text.textContent = siteContent["main-content"][contentpText[i++]];
   });
 
   // Middle Image
   const contentIMG = document.getElementById('middle-img');
   contentIMG.src = siteContent["main-content"]["middle-img-src"];
+
+// Contact Section 
+  // Contact Header
+  const contactHeader = document.querySelector('.contact h4');
+  contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+
+
+  // JSON Content below
+  // "contact": {
+  //   "contact-h4" : "Contact",
+  //   "address" : "123 Way 456 Street Somewhere, USA",
+  //   "phone" : "1 (888) 888-8888",
+  //   "email" : "sales@greatidea.io",
+  // "footer": {
+  //   "copyright" : "Copyright Great Idea! 2018"
