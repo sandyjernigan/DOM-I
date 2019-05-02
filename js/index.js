@@ -156,7 +156,7 @@ footerText.textContent = siteContent["footer"]["copyright"];
     else { 
       event.target.style.backgroundColor = "slategrey";
       ctaHeader.textContent = "Because It Is";
-      ctaHeader.style.color = "green";
+      ctaHeader.style.color = "darkblue";
     }
   });
 
