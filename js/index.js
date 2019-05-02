@@ -95,13 +95,13 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   const contactHeader = document.querySelector('.contact h4');
   contactHeader.textContent = siteContent["contact"]["contact-h4"];
 
+  // Contact Text
+  const contactText = Array.from(document.querySelectorAll('.contact p'));
+  contactText[0].textContent = siteContent["contact"]["address"];
+  contactText[1].textContent = siteContent["contact"]["phone"];
+  contactText[2].textContent = siteContent["contact"]["email"];
 
 
   // JSON Content below
-  // "contact": {
-  //   "contact-h4" : "Contact",
-  //   "address" : "123 Way 456 Street Somewhere, USA",
-  //   "phone" : "1 (888) 888-8888",
-  //   "email" : "sales@greatidea.io",
   // "footer": {
   //   "copyright" : "Copyright Great Idea! 2018"
