@@ -104,3 +104,13 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // Footer
 const footerText = document.querySelector('footer p');
 footerText.textContent = siteContent["footer"]["copyright"];
+
+
+// Task 3: Add new content
+  // Change the color of the navigation text to be green.
+
+  headerNavList.forEach( navItem => {
+    navItem.style.color = 'green';
+  });
+
+  
