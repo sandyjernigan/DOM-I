@@ -120,5 +120,35 @@ footerText.textContent = siteContent["footer"]["copyright"];
   document.querySelector('header nav').appendChild(newNavItem1);
 
   const newNavItem2 = document.createElement("a");  
-  newNavItem2.textContent = "DOM";
+  newNavItem2.textContent = "Orginial";
   document.querySelector('header nav').prepend(newNavItem2);
+
+  // Check your work by looking at the [original html](original.html) in the browser
+  newNavItem2.href = "original.html";
+
+
+//Stretch Goals
+  // Update styles throughout the page as you see fit.  Study what happens when you updated the DOM using style in JavaScript.  
+  // Study tomorrow's lesson on events and try to integrate a button that can update content on the site with a click of a button.  You could build a similar data object with new values to help you test the click event.
+
+  // Click Login and it will change to Sign Out
+  newNavItem1.addEventListener('click', (event) => {
+    event.target.textContent = "Sign Out";
+  })
+
+  // Click Get Started and it will change the Content Header Text and Color
+  // Click again to remove
+  ctaHeaderbutton.addEventListener('click', (event) => {
+    if (event.target.style.backgroundColor == "slategrey") {
+      event.target.style.removeProperty("background-color");
+      ctaHeader.textContent = siteContent["cta"]["h1"];
+      ctaHeader.style.removeProperty("color");
+    }
+    else { 
+      event.target.style.backgroundColor = "slategrey";
+      ctaHeader.textContent = "Because It Is";
+      ctaHeader.style.color = "green";
+    }
+  });
+
+  
