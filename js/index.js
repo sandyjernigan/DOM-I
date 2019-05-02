@@ -40,3 +40,124 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Task 1: Create selectors to point your data into elements
+// Task 2: Update the HTML with the JSON data
+
+// Add Content for Header Nav Bar
+  const headerNavList = document.querySelectorAll('header nav a');
+  let i = 1;
+  headerNavList.forEach( navItem => {
+    navItem.textContent = siteContent["nav"]["nav-item-" + i];
+    i++;
+  });
+
+//CTA 
+  // CTA H1
+  const ctaHeader = document.querySelector('.cta-text h1');
+  ctaHeader.textContent = siteContent["cta"]["h1"];
+
+  // CTA Button
+  const ctaHeaderbutton = document.querySelector('.cta-text button');
+  ctaHeaderbutton.textContent = siteContent["cta"]["button"];
+
+  // CTA Image
+  const ctaHeaderIMG = document.getElementById('cta-img');
+  ctaHeaderIMG.src = siteContent["cta"]["img-src"];
+
+// Main Content
+  // Content headers
+  const contentHeaders = document.querySelectorAll('.main-content h4');
+
+  const contentHeadersText = Object.keys(siteContent["main-content"]).filter(text => text.includes("h4"));
+  
+  i = 0;
+  contentHeaders.forEach( header => {
+    header.textContent = siteContent["main-content"][contentHeadersText[i++]];
+  });
+  
+  // Text Content
+  const contentp = document.querySelectorAll('.main-content p');
+
+  const contentpText = Object.keys(siteContent["main-content"]).filter(text => text.includes("content"));
+  
+  i = 0;
+  contentp.forEach( text => {
+    text.textContent = siteContent["main-content"][contentpText[i++]];
+  });
+
+  // Middle Image
+  const contentIMG = document.getElementById('middle-img');
+  contentIMG.src = siteContent["main-content"]["middle-img-src"];
+
+// Contact Section 
+  // Contact Header
+  const contactHeader = document.querySelector('.contact h4');
+  contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+  // Contact Text
+  const contactText = Array.from(document.querySelectorAll('.contact p'));
+  contactText[0].textContent = siteContent["contact"]["address"];
+  contactText[1].textContent = siteContent["contact"]["phone"];
+  contactText[2].textContent = siteContent["contact"]["email"];
+
+// Footer
+const footerText = document.querySelector('footer p');
+footerText.textContent = siteContent["footer"]["copyright"];
+
+
+// Task 3: Add new content
+  // Change the color of the navigation text to be green.
+
+  headerNavList.forEach( navItem => {
+    navItem.style.color = 'green';
+  }); // This can be added into the forEach earlier, leaving here for easier reading.
+
+  // Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system.
+
+  const newNavItem1 = document.createElement("a");  
+  newNavItem1.textContent = "Login";
+  document.querySelector('header nav').appendChild(newNavItem1);
+
+  const newNavItem2 = document.createElement("a");  
+  newNavItem2.textContent = "Orginial";
+  document.querySelector('header nav').prepend(newNavItem2);
+
+  // Check your work by looking at the [original html](original.html) in the browser
+  newNavItem2.href = "original.html";
+
+
+//Stretch Goals
+  // Update styles throughout the page as you see fit.  Study what happens when you updated the DOM using style in JavaScript.  
+  const allh4tags = document.querySelectorAll('h4');
+  allh4tags.forEach( h => {
+    h.style.color = 'darkblue';
+  }); 
+  const allptags = document.querySelectorAll('p');
+  allptags.forEach( p => {
+    p.style.color = 'darkblue';
+  }); 
+
+  // Study tomorrow's lesson on events and try to integrate a button that can update content on the site with a click of a button.  You could build a similar data object with new values to help you test the click event.
+
+  // Click Login and it will change to Sign Out
+  newNavItem1.addEventListener('click', (event) => {
+    event.target.textContent = "Sign Out";
+  })
+
+  // Click Get Started and it will change the Content Header Text and Color
+  // Click again to remove
+  ctaHeaderbutton.addEventListener('click', (event) => {
+    if (event.target.style.backgroundColor == "slategrey") {
+      event.target.style.removeProperty("background-color");
+      ctaHeader.textContent = siteContent["cta"]["h1"];
+      ctaHeader.style.removeProperty("color");
+    }
+    else { 
+      event.target.style.backgroundColor = "slategrey";
+      ctaHeader.textContent = "Because It Is";
+      ctaHeader.style.color = "darkblue";
+    }
+  });
+
+  
