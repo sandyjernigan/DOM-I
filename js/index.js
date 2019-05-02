@@ -70,11 +70,22 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   const contentHeaders = document.querySelectorAll('.main-content h4');
 
   const contentHeadersText = Object.keys(siteContent["main-content"]).filter(text => text.includes("h4"));
-  let h = 0;
+  
+  i = 0;
   contentHeaders.forEach( header => {
-    let headerText = contentHeadersText[h];
+    let headerText = contentHeadersText[i];
     header.textContent = siteContent["main-content"][headerText];
-    h++;
+    i++;
   });
+  
+  // Text Content
+  const contentp = document.querySelectorAll('.main-content p');
 
-  //contentHeaders[0].textContent = siteContent["cta"]["features-h4"];
+  const contentpText = Object.keys(siteContent["main-content"]).filter(text => text.includes("content"));
+  
+  i = 0;
+  contentp.forEach( text => {
+    let pText = contentpText[i];
+    text.textContent = siteContent["main-content"][pText];
+    i++;
+  });
