@@ -89,3 +89,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
     text.textContent = siteContent["main-content"][pText];
     i++;
   });
+
+  // Middle Image
+  const contentIMG = document.getElementById('middle-img');
+  contentIMG.src = siteContent["main-content"]["middle-img-src"];
