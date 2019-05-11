@@ -46,10 +46,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Add Content for Header Nav Bar
   const headerNavList = document.querySelectorAll('header nav a');
-  let i = 1;
-  headerNavList.forEach( navItem => {
-    navItem.textContent = siteContent["nav"]["nav-item-" + i];
+  
+  headerNavList.forEach( (navItem, i) => {
     i++;
+    navItem.textContent = siteContent["nav"]["nav-item-" + i];    
   });
 
 //CTA 
@@ -71,8 +71,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
   const contentHeadersText = Object.keys(siteContent["main-content"]).filter(text => text.includes("h4"));
   
-  i = 0;
-  contentHeaders.forEach( header => {
+  contentHeaders.forEach( (header, i) => {
     header.textContent = siteContent["main-content"][contentHeadersText[i++]];
   });
   
@@ -81,8 +80,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
   const contentpText = Object.keys(siteContent["main-content"]).filter(text => text.includes("content"));
   
-  i = 0;
-  contentp.forEach( text => {
+  contentp.forEach( (text, i) => {
     text.textContent = siteContent["main-content"][contentpText[i++]];
   });
 
